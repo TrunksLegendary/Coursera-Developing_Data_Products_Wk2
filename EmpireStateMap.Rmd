@@ -1,0 +1,38 @@
+---
+title: "Developing_Data_Products_Wk2"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+```
+# Coursera-Developing Data Products Week 2 Assignment
+
+
+## November 24, 2017
+
+
+```{r cars}
+library(leaflet)
+```
+
+## Basic Map
+
+## This map shows the location of the Empire State Building in New York City.
+
+```{r}
+
+Empire <- data.frame(name="<a href='https://http://www.esbnyc.com/'>Empire State Building</a>",
+                     lat=40.74813,
+                     lng=-73.98489)
+
+Empire %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=Empire$lat,
+             lng=Empire$lng,
+             popup=Empire$name)
+
+
+```
+
